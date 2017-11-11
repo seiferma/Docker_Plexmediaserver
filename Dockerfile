@@ -2,6 +2,10 @@ FROM debian:stable-slim
 
 WORKDIR /plex
 
+EXPOSE 32400
+EXPOSE 1900/udp
+EXPOSE 32469
+
 ENV DATA_VOLUME=/var/lib/plexmediaserver
 
 RUN VERSION=1.9.6.4429-23901a099 && \
