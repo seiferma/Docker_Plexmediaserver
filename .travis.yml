@@ -1,0 +1,18 @@
+sudo: false
+language: ruby
+services:
+  - docker
+before_install:
+  - git clone --depth 1 https://github.com/seiferma/Docker_BuildUtils.git /tmp/BuildUtils
+  - . /tmp/BuildUtils/travisSetup.sh
+script:
+  - travisBuild.sh
+deploy:
+  provider: script
+  script: travisDeploy.sh
+  on:
+    branch: master
+env:
+  global: 
+    - IMAGE_NAME=seiferma/plexmediaserver
+    - secure: "QHvxWzbLMZIuLcfcqr5JFyBvmLVaDfQK6AfmVfdmSFEUDq+UTQ8vKDcXarD1k4pL8Wxw1EPt+uwvWsJHzIBfwhbZoqf0kcEw5eC37D8WZ2gX3qM1rHgrDWVh7q0Z60uEUZpUZT2VFhhCeY32AMyygvtSpveZS0XY3DzhIpg43qnZmSicKDazItUxUHYOMbRBdP+2QqLpCnx1xKqvUelf+ROG2gYi3SUJpt3RS8JS9GiVWHM/jf6On96s0tHRRQTOTwK6Pa8WzLLQm2eJnsLXIqKgHQhu2hJMCL4kJ8Jj1dADELHZr8kHwEcBkkuJF5okSPJUz3Pijuqm7ed9yyE2HNmz8lUZ1AalkW/vtpU9nWaNQkY97ZFvk8p85dKZ7ThHzItkarKC4jjkJHOlrhNh8sNQsOy7crKLl42FIwCQtdJgL7gbh8gQTqhQk0+6s4ESNPfyS6p/Ef/HtDWL4wlEgIOMmiKr7C9XiAZXnPmIXg0bX4H4WS21eyRWSHjrQ/hj9nSR/B5qZAqB5Ps+dDeovzGMHw/HRvJ3ibjI9wHhxbyH6VuZpiv60HAamVA00NrOV1LLl0I9pOYdGbwTBcrHM7b9dKM9UJS6Rm10knqemn/Yd3FmyJyFNELaDYYtrItockCJZf4HiKCqjfmSQtArrX7f8C4PohxLTzo39F/aczA="
