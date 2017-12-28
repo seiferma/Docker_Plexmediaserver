@@ -6,7 +6,7 @@ EXPOSE 32400
 EXPOSE 1900/udp
 EXPOSE 32469
 
-ENV PLEX_HOME=/var/lib/plexmediaserver
+ENV PLEX_HOME=/plex/Library
 
 RUN VERSION=1.9.6.4429-23901a099 && \
     apt-get update && \
