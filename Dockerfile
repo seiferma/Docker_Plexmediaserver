@@ -33,6 +33,6 @@ RUN NEWUSER=plexserver && \
 USER plexserver
 VOLUME [${PLEX_HOME}]
 
-COPY ["start.sh", "./"]
+COPY ["start.sh", "Preferences.xml", "./"]
 
 ENTRYPOINT ["./start.sh"]
