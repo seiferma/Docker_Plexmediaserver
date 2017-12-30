@@ -10,4 +10,5 @@ if [ ! -f "$PREF_DIR/$PREF_FILE" ]; then
     mkdir -p "$PREF_DIR"
     cp $SCRIPT_DIR/Preferences.xml "$PREF_DIR/$PREF_FILE"
 fi
-LD_LIBRARY_PATH=/usr/lib/plexmediaserver "/usr/lib/plexmediaserver/Plex Media Server"
+export LD_LIBRARY_PATH=/usr/lib/plexmediaserver
+exec "/usr/lib/plexmediaserver/Plex Media Server"
