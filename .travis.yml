@@ -4,15 +4,15 @@ services:
   - docker
 before_install:
   - git clone --depth 1 https://github.com/seiferma/Docker_BuildUtils.git /tmp/BuildUtils
-  - . /tmp/BuildUtils/travisSetup.sh
+  - . /tmp/BuildUtils/travisSetupDockerhub.sh
 script:
   - travisBuild.sh
 deploy:
   provider: script
-  script: travisDeploy.sh
+  script: travisDeployDockerhub.sh
   on:
     branch: master
 env:
   global: 
     - IMAGE_NAME=seiferma/plexmediaserver
-    - secure: "QHvxWzbLMZIuLcfcqr5JFyBvmLVaDfQK6AfmVfdmSFEUDq+UTQ8vKDcXarD1k4pL8Wxw1EPt+uwvWsJHzIBfwhbZoqf0kcEw5eC37D8WZ2gX3qM1rHgrDWVh7q0Z60uEUZpUZT2VFhhCeY32AMyygvtSpveZS0XY3DzhIpg43qnZmSicKDazItUxUHYOMbRBdP+2QqLpCnx1xKqvUelf+ROG2gYi3SUJpt3RS8JS9GiVWHM/jf6On96s0tHRRQTOTwK6Pa8WzLLQm2eJnsLXIqKgHQhu2hJMCL4kJ8Jj1dADELHZr8kHwEcBkkuJF5okSPJUz3Pijuqm7ed9yyE2HNmz8lUZ1AalkW/vtpU9nWaNQkY97ZFvk8p85dKZ7ThHzItkarKC4jjkJHOlrhNh8sNQsOy7crKLl42FIwCQtdJgL7gbh8gQTqhQk0+6s4ESNPfyS6p/Ef/HtDWL4wlEgIOMmiKr7C9XiAZXnPmIXg0bX4H4WS21eyRWSHjrQ/hj9nSR/B5qZAqB5Ps+dDeovzGMHw/HRvJ3ibjI9wHhxbyH6VuZpiv60HAamVA00NrOV1LLl0I9pOYdGbwTBcrHM7b9dKM9UJS6Rm10knqemn/Yd3FmyJyFNELaDYYtrItockCJZf4HiKCqjfmSQtArrX7f8C4PohxLTzo39F/aczA="
+    - secure: "IzbKijC5gsupX+vUk9/Bda29fx0cy6wuSz3C4UmQcbGkJ9cewhKh4QpoPCItUCqq9B88RCjLwq5OJzGRIAC/NyZt4l2J/zgmf8jexuPT/eC2pmthEYGB9Ckg4SwBfp33JkZ5yaOooVY6EB2ueJLiSFJbOR93/hncTbVkQQ11S9XHFPfyA45Dl8f2m3G7pr2vXI6h0JF9IM/iQFU1vkjkjBRIHNMD8l4vPu4TJiIeJJMkI3QN6Au+iC1Qu3KjhX2x5gLTf2zv1lwZ79J/V4u1zwAs2UvskOxl2Zs4LuSeyS2x/jUjFJm0qqLvgZfgwBzavqOaAGpUZu01OCO2XzCRLnwRTD7fkHK4MnSYPZAlYYIJ2Ak5Rj9RFfkT20d7FKEdDFLFfdKxiHHf25FfE7xOExxTMqR4XO+DMEx1tf8JhtSHQCSSMnl0CLAzliCblF9BC+ztTnegepzv+yJsLDjiT8UGuMmaCY/eALMdYEeVb8auOscuYIOxCKKURcSCfRTYibq/X520DrWDx857iVMgafJcKh/DaLJoMVgbcxnt2oJxvI7/oOUOXHnF1R6cGUUHssT5HIv6wajMFfzht0wIkDDaSWRkfDYUMpw7s0L4H9KJLp96WtLotAKmd/nh0VTzPNPuFTMEcGAR4VbVC2oMykkzOg8HSmjaJdqrrhcTXcA="
