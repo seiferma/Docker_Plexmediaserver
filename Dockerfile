@@ -31,7 +31,7 @@ RUN NEWUSER=plexserver && \
     NEWUSER=
 
 USER plexserver
-VOLUME [${PLEX_HOME}]
+VOLUME ["${PLEX_HOME}"]
 
 COPY ["start.sh", "Preferences.xml", "./"]
 
