@@ -8,7 +8,7 @@ EXPOSE 32469
 
 ENV PLEX_HOME=/plex/Library
 
-RUN VERSION=1.18.0.1913-e5cc93306 && \
+RUN VERSION=1.18.4.2171-ac2afe5f8 && \
     apt-get update && \
     apt-get install -y wget && \
     wget https://downloads.plex.tv/plex-media-server-new/${VERSION}/debian/plexmediaserver_${VERSION}_amd64.deb -O plexmediaserver.deb && \
